@@ -1,0 +1,54 @@
+.weather-app {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .error {
+    color: red;
+    margin-bottom: 20px;
+  }
+  
+  .weather-info {
+    margin-bottom: 20px;
+  }
+  
+  .weather-icon img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .temperature {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #555;
+    margin: 4px 0;
+  }
+  
+  .loading {
+    font-size: 18px;
+    color: #777;
+  }
+  
+  .city-select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
