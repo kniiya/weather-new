@@ -1,0 +1,18 @@
+/* Weather3.css */
+.weather-app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .weather-app {
+    padding: 10px;
+  }
+}

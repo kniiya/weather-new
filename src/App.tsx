@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Weather from "./pages/Weather";
 import Weather2 from "./pages/Weather2";
+import WeatherAtomic from "./pages/WeatherAtomic";
 
 const App = () => {
   return (
@@ -29,6 +30,9 @@ const App = () => {
             <li>
               <Link to="/weather2">Weather2</Link>
             </li>
+            <li>
+              <Link to="/weather_atomic">WeatherAtomic</Link>
+            </li>
           </ul>
         </nav>
 
@@ -39,6 +43,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/weather" element={<Weather />} />
           <Route path="/weather2" element={<Weather2 />} />
+          <Route path="/weather_atomic" element={<WeatherAtomic />} />
         </Routes>
       </div>
     </Router>
