@@ -1,3 +1,4 @@
+import { Select as ChakraSelect } from "@chakra-ui/react";
 interface SelectOption {
   value: string;
   label: string;
@@ -16,7 +17,7 @@ export const Select: React.FC<SelectProps> = ({
   onChange,
   className,
 }) => (
-  <select
+  <ChakraSelect
     value={value}
     onChange={onChange}
     className={`base-select ${className || ""}`}
@@ -26,5 +27,5 @@ export const Select: React.FC<SelectProps> = ({
         {option.label}
       </option>
     ))}
-  </select>
+  </ChakraSelect>
 );

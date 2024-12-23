@@ -1,3 +1,5 @@
+import { Button as ChakraButton } from "@chakra-ui/react";
+
 interface ButtonProps {
   onClick: () => void;
   children: React.ReactNode;
@@ -9,7 +11,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   className,
 }) => (
-  <button onClick={onClick} className={`base-button ${className || ""}`}>
+  <ChakraButton onClick={onClick} className={className} colorScheme="blue">
     {children}
-  </button>
+  </ChakraButton>
 );
