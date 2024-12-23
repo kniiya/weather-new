@@ -1,3 +1,5 @@
+import { Input as ChakraInput } from "@chakra-ui/react";
+
 interface InputProps {
   id: string;
   value: number | string;
@@ -15,13 +17,12 @@ export const Input: React.FC<InputProps> = ({
   placeholder,
   step,
 }) => (
-  <input
+  <ChakraInput
     id={id}
     type={type}
     value={value}
     onChange={onChange}
     step={step}
     placeholder={placeholder}
-    className="base-input"
   />
 );

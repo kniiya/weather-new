@@ -1,3 +1,4 @@
+import { Box, Heading, Stack, VStack } from "@chakra-ui/react";
 import { WeatherIcon } from "../atoms/WeatherIcon";
 import { WeatherDetail } from "../molecules/WeatherDetail";
 import type { WeatherData } from "../types/weather";
@@ -8,25 +9,25 @@ interface CurrentWeatherProps {
 
 export const CurrentWeather: React.FC<CurrentWeatherProps> = ({ weather }) => {
   return (
-    <div className="current-weather">
-      <div className="weather-header">
-        <h2>
+    <Box p={6} borderRadius="lg" boxShadow="lg" bg="white">
+      <VStack spacing={4}>
+        <Heading size="md">
           {weather.name}, {weather.sys.country}
-        </h2>
-      </div>
-      <div className="weather-content">
-        <WeatherIcon
-          iconCode={weather.weather[0].icon}
-          alt={weather.weather[0].description}
-        />
-        <WeatherDetail
-          temperature={weather.main.temp}
-          feelsLike={weather.main.feels_like}
-          humidity={weather.main.humidity}
-          windSpeed={weather.wind.speed}
-          description={weather.weather[0].description}
-        />
-      </div>
-    </div>
+        </Heading>
+        <Stack direction="row" alignItems="center" gap={4}>
+          <WeatherIcon
+            iconCode={weather.weather[0].icon}
+            alt={weather.weather[0].description}
+          />
+          <WeatherDetail
+            temperature={weather.main.temp}
+            feelsLike={weather.main.feels_like}
+            humidity={weather.main.humidity}
+            windSpeed={weather.wind.speed}
+            description={weather.weather[0].description}
+          />
+        </Stack>
+      </VStack>
+    </Box>
   );
 };

@@ -1,3 +1,5 @@
+import { Box, Text, VStack, HStack } from "@chakra-ui/react";
+
 interface WeatherDetailProps {
   temperature: number;
   feelsLike: number;
@@ -14,14 +16,16 @@ export const WeatherDetail: React.FC<WeatherDetailProps> = ({
   description,
 }) => {
   return (
-    <div className="weather-detail">
-      <p className="temperature">{temperature}°C</p>
-      <p className="feels-like">体感温度: {feelsLike}°C</p>
-      <p className="description">{description}</p>
-      <div className="weather-metrics">
-        <p className="humidity">湿度: {humidity}%</p>
-        <p className="wind">風速: {windSpeed} m/s</p>
-      </div>
-    </div>
+    <Box p={4} borderRadius="md" boxShadow="md">
+      <VStack spacing={2} align="stretch">
+        <Text fontSize="3xl">{temperature}°C</Text>
+        <Text fontSize="lg">体感温度: {feelsLike}°C</Text>
+        <Text>{description}</Text>
+        <HStack spacing={4} justify="center">
+          <Text>湿度: {humidity}%</Text>
+          <Text>風速: {windSpeed} m/s</Text>
+        </HStack>
+      </VStack>
+    </Box>
   );
 };
