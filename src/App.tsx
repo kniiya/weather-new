@@ -1,9 +1,11 @@
 // src/App.tsx
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GagakuLayout from "./layouts/GagakuLayout";
+import FuneralLayout from "./layouts/FuneralLayout";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+import GagakuPage from "./pages/GagakuPage";
+import FuneralPage from "./pages/FuneralPage";
 import Weather from "./pages/Weather";
 import Weather2 from "./pages/Weather2";
 import WeatherAtomic from "./pages/WeatherAtomic";
@@ -11,41 +13,21 @@ import WeatherAtomic from "./pages/WeatherAtomic";
 const App = () => {
   return (
     <Router>
-      <div>
-        {/* ナビゲーションバー */}
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link to="/weather">Weather</Link>
-            </li>
-            <li>
-              <Link to="/weather2">Weather2</Link>
-            </li>
-            <li>
-              <Link to="/weather_atomic">WeatherAtomic</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* ルーティング設定 */}
-        <Routes>
+      <Routes>
+        {/* 雅楽エリア */}
+        <Route element={<GagakuLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/gagaku" element={<GagakuPage />} />
+          <Route path="/weather_atomic" element={<WeatherAtomic />} />
+        </Route>
+
+        {/* お通夜エリア */}
+        <Route element={<FuneralLayout />}>
+          <Route path="/funeral" element={<FuneralPage />} />
           <Route path="/weather" element={<Weather />} />
           <Route path="/weather2" element={<Weather2 />} />
-          <Route path="/weather_atomic" element={<WeatherAtomic />} />
-        </Routes>
-      </div>
+        </Route>
+      </Routes>
     </Router>
   );
 };
